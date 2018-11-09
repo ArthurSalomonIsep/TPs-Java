@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Map;
+import java.util.Scanner;
+
+public class TP5 {
+
+	public static void main(String[] args) {
+		// Exercice 3.1
+		ArrayList<Integer> liste = new ArrayList<Integer>();
+		for (int i = 1; i < 5; i++) {
+			liste.add(i);
+		}
+		afficheListe(liste);
+		System.out.print("\n");
+		// Exercice 3.2
+		occurences();
+		System.out.print("\n");
+		// Exercice 3.3
+		retirer();
+		System.out.print("\n");
+
+	}
+
+	public static void afficheListe(ArrayList<Integer> list) {
+		System.out.print("Les éléments de la listes sont maintenant :");
+		for (int i = 0; i < list.size(); i++) {
+			System.out.print(list.get(i) + " ");
+		}
+	}
+
+	public static int occurences() {
+
+		ArrayList<Integer> list = new ArrayList<>(
+				Arrays.asList(2, 65, 42, 53, 27, 2, 42, 27, 2, 53, 53, 53, 65, 21, 27, 53, 2, 53, 65, 27));
+		System.out.println("Quelle valeur rechercher dans la liste?");
+		int oc = 0;
+		Integer x = 0;
+		boolean wrongInput = true;
+		do {
+			try {
+				x = new Scanner(System.in).nextInt();
+				wrongInput = false;
+			} catch (InputMismatchException e) {
+				System.out.println("UN ENTIER SVP !");
+			}
+		} while (wrongInput);
+
+		while (list.contains(x)) {
+			oc++;
+			list.remove(x);
+		}
+
+		System.out.println("Le nombre d'occurences de " + x + " est :" + oc + ".");
+		return oc;
+	}
+
+	public static void retirer() {
+
+		ArrayList<Integer> list = new ArrayList<>(
+				Arrays.asList(2, 65, 42, 53, 27, 2, 42, 27, 2, 53, 53, 53, 65, 21, 27, 53, 2, 53, 65, 27));
+		System.out.println("Quelle valeur retirer dans la liste?");
+		Integer x = 0;
+		boolean wrongInput = true;
+		do {
+			try {
+				x = new Scanner(System.in).nextInt();
+				wrongInput = false;
+			} catch (InputMismatchException e) {
+				System.out.println("UN ENTIER SVP !");
+			}
+		} while (wrongInput);
+
+		while (list.contains(x)) {
+			list.remove(x);
+		}
+		System.out.print("la liste est maintenant :"+list);
+
+	}
+	
+	public static void afficheDico(Map map) {
+		System.out.print("Les éléments du dictionnaire sont maintenant :");
+		for (int i = 0; i < map.size(); i++) {
+			System.out.print(map.get(i) + " ");
+		}
+		
+	}
+	
+}
