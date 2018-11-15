@@ -88,3 +88,14 @@ public class TP5 {
 	}
 	
 }
+/*2.2 Les dictionnaires
+En Java, les dictionnaires servent à stocker des éléments selon le paradigme
+(clé, valeur). Un certain nombre de méthodes vues en cours vous seront utiles
+pour ce TP. Ces méthodes sont listées ci-dessous :
+Map<String, String> map = new HashMap<String, String>();
+Set entries = map.entrySet(); // Recupere toutes les valeurs
+Set keys = map.keySet(); // Recupere toutes les cles
+String value = map.get(key); // Recupere la valeur associee a ‘key’
+map.put(key, value); // Ajoute ‘value’ a la cle ‘key’
+map.size(); // Retourne la taille du dictionnaire
+map.remove(key); // Retire le couple identifie par ‘key’*/
